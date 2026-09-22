@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halleluhya Gardens Hotel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <span>Call us: 0742921888</span>
+        <span>Free cancellation on select stays</span>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <span class="brand-mark">H</span>
+          <div>
+            <strong>Halleluhya Gardens</strong>
+            <small>Hotel & Suites</small>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#rooms">Rooms</a>
+          <a href="#booking">Booking</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div>
+            <span class="eyebrow">Welcome to Halleluhya Gardens</span>
+            <h1>Stay somewhere calm, stylish, and unforgettable.</h1>
+            <p>Ocean-view suites, warm hospitality, and boutique comfort for couples, families, and business travelers.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#booking">Book Your Stay</a>
+              <a class="button secondary" href="#rooms">Explore Rooms</a>
+            </div>
+            <ul class="hero-points">
+              <li>4.9 guest rating</li>
+              <li>24/7 concierge</li>
+              <li>Private beach access</li>
+            </ul>
+          </div>
+
+          <div class="booking-card">
+            <h2>Quick Booking</h2>
+            <form id="quick-booking-form">
+              <label>
+                Check In
+                <input type="date" id="quickCheckIn" required />
+              </label>
+              <label>
+                Check Out
+                <input type="date" id="quickCheckOut" required />
+              </label>
+              <label>
+                Guests
+                <select id="quickGuests">
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                </select>
+              </label>
+              <button type="submit" class="button primary">Check Availability</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="rooms">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow accent">Featured rooms</span>
+              <h2>Rooms for every kind of stay</h2>
+            </div>
+          </div>
+          <div id="room-list" class="room-grid"></div>
+        </div>
+      </section>
+
+      <section class="section booking-section" id="booking">
+        <div class="container booking-wrap">
+          <div class="booking-form-box">
+            <h2>Reserve your stay</h2>
+            <form id="booking-form">
+              <label>
+                Full Name
+                <input type="text" id="name" required />
+              </label>
+              <label>
+                Phone Number for Payment
+                <input type="tel" id="phoneNumber" required placeholder="0742921888" />
+              </label>
+              <label>
+                Check In
+                <input type="date" id="checkIn" required />
+              </label>
+              <label>
+                Check Out
+                <input type="date" id="checkOut" required />
+              </label>
+              <label>
+                Room
+                <select id="roomSelect" required></select>
+              </label>
+              <div class="payment-note">
+                <strong>Payment:</strong> Transfer to 0742921888. No reversal.
+              </div>
+              <button type="submit" class="button primary">Confirm Booking</button>
+            </form>
+            <p id="status" class="status"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h3>Halleluhya Gardens</h3>
+          <p>Luxury coastal living and thoughtful hospitality.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <p>48 Ocean View Drive</p>
+          <p>Maui, Hawaii</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>pokandira@gmail.com</p>
+          <p>0742921888</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

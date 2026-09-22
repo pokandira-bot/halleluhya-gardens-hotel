@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "environmentName": {
+      "value": "dev"
+    },
+    "sessionId": {
+      "value": "c3caa22b-40c5-4eaf-bd07-a37a74779b85"
+    },
+    "deployedBy": {
+      "value": "unknown"
+    },
+    "createdAt": {
+      "value": "2026-09-22T00:00:00Z"
+    }
+  }
+}

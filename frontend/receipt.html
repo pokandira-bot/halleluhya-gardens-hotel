@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Receipt</title>
+    <style>
+      body {
+        margin: 0;
+        background: #f7f2ee;
+        font-family: Arial, sans-serif;
+        color: #1c1a18;
+      }
+
+      .receipt-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: #fff;
+        border: 1px solid #e7ded2;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+      }
+
+      .header {
+        border-bottom: 1px solid #e7ded2;
+        margin-bottom: 24px;
+        padding-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        color: #8a5e3b;
+        font-size: 2rem;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 14px 24px;
+      }
+
+      .meta div {
+        border-bottom: 1px solid #f0e7df;
+        padding-bottom: 12px;
+      }
+
+      .label {
+        display: block;
+        color: #6f6b66;
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .actions {
+        margin-top: 28px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 0.9rem 1.4rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .print-btn {
+        background: #8a5e3b;
+        color: #fff;
+      }
+
+      .close-btn {
+        background: #f1e9e2;
+        color: #1c1a18;
+      }
+
+      @media (max-width: 600px) {
+        .receipt-container {
+          margin: 16px;
+          padding: 20px;
+        }
+
+        .meta {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="receipt-container">
+      <div class="header">
+        <h1>Halleluhya Gardens</h1>
+        <div>Booking Receipt</div>
+      </div>
+
+      <div id="receipt-content" class="meta"></div>
+
+      <div class="actions">
+        <button class="print-btn" type="button" onclick="window.print()">Print Receipt</button>
+        <button class="close-btn" type="button" onclick="window.close()">Close</button>
+      </div>
+    </div>
+
+    <script>
+      const receipt = JSON.parse(localStorage.getItem('hotelReceipt') || '{}');
+      const content = document.getElementById('receipt-content');
+
+      if (!receipt || Object.keys(receipt).length === 0) {
+        content.innerHTML = '<p>No receipt available.</p>';
+      } else {
+        const fields = [
+          { label: 'Receipt Number', value: receipt.receiptNumber || 'N/A' },
+          { label: 'Guest Name', value: receipt.guestName || 'N/A' },
+          { label: 'Guest Email', value: receipt.guestEmail || 'N/A' },
+          { label: 'Phone Number', value: receipt.phoneNumber || 'N/A' },
+          { label: 'Host Email', value: receipt.hostEmail || 'pokandira@gmail.com' },
+          { label: 'Room', value: receipt.room || 'N/A' },
+          { label: 'Check In', value: receipt.checkIn || 'N/A' },
+          { label: 'Check Out', value: receipt.checkOut || 'N/A' },
+          { label: 'Nights', value: receipt.nights || 'N/A' },
+          { label: 'Total', value: receipt.total ? `Ksh ${receipt.total}` : 'N/A' },
+          { label: 'Payment', value: 'Transfer to 0742921888. No reversal.' },
+          { label: 'Issued', value: receipt.issuedAt ? new Date(receipt.issuedAt).toLocaleString() : 'N/A' }
+        ];
+
+        content.innerHTML = fields.map((field) => `
+          <div>
+            <span class="label">${field.label}</span>
+            <strong>${field.value}</strong>
+          </div>
+        `).join('');
+      }
+    </script>
+  </body>
+</html>

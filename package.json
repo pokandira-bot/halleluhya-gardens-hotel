@@ -1,0 +1,13 @@
+{
+  "name": "hotel-booking-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  },
+  "scripts": {
+    "backend": "node backend/server.js",
+    "frontend": "node serve-frontend.js",
+    "dev": "node backend/server.js"
+  }
+}
