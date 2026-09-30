@@ -7,6 +7,10 @@ const rooms = [
   { id: 2, name: 'Garden Deluxe', price: 240, guests: 2, status: 'Limited' },
   { id: 3, name: 'Family Residence', price: 410, guests: 4, status: 'Available' },
   { id: 4, name: 'Skyline Loft', price: 330, guests: 2, status: 'Booked' }
+  { id: 1, name: 'Ocean Suite', price: 140, guests: 1, status: 'Available' },
+  { id: 2, name: 'Garden Deluxe', price: 320, guests: 3, status: 'Available' },
+  { id: 3, name: 'Family Residence', price: 410, guests: 4, status: 'Available' },
+  { id: 4, name: 'Skyline Loft', price: 450, guests: 3, status: 'Available' }
 ];
 
 function generateReceiptNumber() {
